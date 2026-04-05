@@ -14,19 +14,23 @@
         <h1>Welcome to the Poem Generator</h1>
       </header>
       <main>
-        <form id="poem-generator-form">
-          <input
-            type="text"
-            placeholder="Enter topic of poem"
-            autofocus
-            required
-            autocomplete="off"
-            class="instructions"
-            id="user-instructions"
-          />
-          <input type="submit" class="submit-button" />
-        </form>
-        <div class="poem" id="poem"></div>
+        <div class="form-wrapper">
+          <form id="poem-generator-form">
+            <input
+              type="text"
+              placeholder="Enter the topic of poem"
+              autofocus
+              required
+              autocomplete="off"
+              class="instructions"
+              id="user-instructions"
+            />
+            <input type="submit" class="submit-button" />
+          </form>
+          <div class="hint">e.g. Dog, Hat, Cheese</div>
+        </div>
+
+        <div class="poem hidden" id="poem"></div>
       </main>
 
       <footer>
@@ -42,6 +46,7 @@
         <a href="https://ai-poem-app.netlify.app/" target="_blank">Netlify</a>
       </footer>
     </div>
+
     <script src="src/javascript.js"></script>
   </body>
 </html>

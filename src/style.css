@@ -4,8 +4,9 @@ body {
 }
 
 a {
-  columns: blue;
+  color: blue;
 }
+
 .container {
   margin: 120px auto;
   max-width: 600px;
@@ -22,22 +23,29 @@ header {
   margin-bottom: 30px;
 }
 
-form {
+.form-wrapper {
   padding: 30px;
   background-color: white;
   box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
   border-radius: 10px;
   margin-bottom: 30px;
+}
+
+form {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.hint {
+  line-height: 1.5;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
 .instructions {
   padding: 14px 80px;
-  border:
-    1px solid,
-    rgba(39, 33, 66, 0.5);
+  border: 1px solid rgba(39, 33, 66, 0.5);
   font-size: 16px;
   border-radius: 50px;
   line-height: 20px;
@@ -58,13 +66,33 @@ form {
   padding: 20px;
   line-height: 2;
   font-weight: 400;
-  border-left: 3px solid;
+  border-left: 3px solid purple; /* FIX: added color */
   box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
   margin: 20px auto;
+}
+
+.hidden {
+  display: none;
 }
 
 footer {
   text-align: center;
   font-size: 13px;
   margin-top: 30px;
+}
+
+.generating {
+  animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }

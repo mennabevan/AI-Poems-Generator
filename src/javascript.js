@@ -12,10 +12,19 @@ function generatePoem(event) {
 
   let instructionsInput = document.querySelector("#user-instructions");
   let apiKey = "6bct4e17oa2f4e400a14bd864136d360";
+
   let prompt = `Generate a poem about ${instructionsInput.value}`;
   let context =
-    "You are a funny peom expert, wanting to put together short poem. Your mission put together a basic 4 line poem, seperate each line. Make sure to follow the user instructions which will be inputted.";
-  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+    "You are a funny poem expert, wanting to put together short poems. Your mission is to put together a basic 4 line poem, separate each line. Make sure to follow the user instructions which will be inputted.";
+
+  let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(
+    prompt,
+  )}&context=${encodeURIComponent(context)}&key=${apiKey}`;
+
+  let poemElement = document.querySelector("#poem");
+  poemElement.classList.remove("hidden");
+
+  poemElement.innerHTML = `<div class="generating">Generating poem about ${instructionsInput.value}</div>`;
 
   console.log("Generating poem");
   console.log(`Prompt: ${prompt}`);
@@ -25,4 +34,4 @@ function generatePoem(event) {
 }
 
 let poemFormElement = document.querySelector("#poem-generator-form");
-poemFormElement.addEventListener(`submit`, generatePoem);
+poemFormElement.addEventListener("submit", generatePoem);
